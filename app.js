@@ -113,6 +113,7 @@ app.get("/api/sample-movies", (req, res) => {
     res.status(200).json(movies);
 });
 
+
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
 });
