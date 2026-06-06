@@ -109,7 +109,7 @@ app.get("/api/sample-movies", (req, res) => {
             created_at: "2026-08-22 09:45:00"
         }
     ];
-
+    console.log(movies,'movies')
     res.status(200).json(movies);
 });
 
