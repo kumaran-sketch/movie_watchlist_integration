@@ -22,8 +22,4 @@ jobs:
 
       - name: Run Container
         run: |
-          docker run -d \
-            --name movie-watchlist \
-            -p ${{ secrets.APP_PORT }}:${{ secrets.APP_PORT }} \
-            -e PORT=${{ secrets.APP_PORT }} \
-            movie-watchlist-app
+          docker run -d --name movie-watchlist -p 8020:8020 movie-watchlist-app
