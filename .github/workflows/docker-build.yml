@@ -1,4 +1,4 @@
-name: Build And Run
+name: Build And Push
 
 on:
   push:
@@ -6,20 +6,20 @@ on:
       - main
 
 jobs:
-  deploy:
-    runs-on: self-hosted
+  docker:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Stop Old Container
+      - name: Login Docker Hub
         run: |
-          docker rm -f movie-watchlist || true
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build Image
         run: |
-          docker build -t movie-watchlist-app .
+          docker build -t kumaran190/movie-watchlist-app:latest .
 
-      - name: Run Container
+      - name: Push Image
         run: |
-          docker run -d --name movie-watchlist -p 8020:8020 movie-watchlist-app
+          docker push kumaran190/movie-watchlist-app:latest
