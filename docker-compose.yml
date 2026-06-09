@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   app:
-    image: movie-watchlist-app:latest
+    image: kumaran190/movie-watchlist-app:latest
     container_name: movie_watchlist_app
     ports:
       - "8020:8020"

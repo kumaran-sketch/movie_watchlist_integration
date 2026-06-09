@@ -18,8 +18,8 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build -t movie-watchlist-app:latest .
+          docker build -t kumaran190/movie-watchlist-app:latest .
 
       - name: Push Image
         run: |
-          docker push movie-watchlist-app:latest
+          docker push kumaran190/movie-watchlist-app:latest
