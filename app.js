@@ -85,6 +85,7 @@ app.get("/api/movies", async (req, res) => {
         });
     }
 });
+
 app.get("/api/sample-movies", (req, res) => {
     const movies = [
         {
